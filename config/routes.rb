@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :diaries
   resources :profiles
   resources :genders, only: [:index]
   resources :accounts
