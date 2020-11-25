@@ -15,3 +15,21 @@ CSV.foreach('db/seeddata/account.csv') do |row|
                     :tmp_authenication_date => row[2]
                    )
 end
+
+CSV.foreach('db/seeddata/gender.csv', headers: true) do |row|
+    Gender.create(
+                    gender_name: row['gender_name'],
+                    display_order: row['display_order']
+                   )
+end
+
+CSV.foreach('db/seeddata/profile.csv') do |row|
+    Profile.create(
+                    :account_id => row[0],
+                    :nickname => row[1],
+                    :self_introduction => row[2],
+                    :gender_id => row[3],
+                    :game_playing => row[4],
+                    :time_period_playing => row[5]
+                   )
+end
