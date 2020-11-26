@@ -46,6 +46,11 @@ class DiariesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def diary_params
-      params.fetch(:diary, {})
+      params.require(:diary).permit(
+          :account_id,
+          :body,
+          :played_game,
+          :posted_image
+        )
     end
 end

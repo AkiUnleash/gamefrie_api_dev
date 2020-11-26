@@ -46,6 +46,10 @@ class AccountsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def account_params
-      params.fetch(:account, {})
+      params.require(:account).permit(
+          :email,
+          :hashed_password,
+          :tmp_authenication_date
+        )
     end
 end

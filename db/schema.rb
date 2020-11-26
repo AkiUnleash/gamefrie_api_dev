@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_11_25_061327) do
 
   create_table "diaries", force: :cascade do |t|
     t.bigint "account_id"
-    t.string "body"
+    t.string "body", null: false
     t.string "played_game"
     t.string "posted_image"
     t.datetime "created_at", precision: 6, null: false
