@@ -20,7 +20,7 @@ class AccountsController < ApplicationController
     if @account.save
       render json: @account, status: :created, location: @account
     else
-      render json: @account.errors, status: :unprocessable_entity
+      render json: @account.errors, status: :@account.erros.full_massage
     end
   end
 
