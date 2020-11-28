@@ -1,0 +1,8 @@
+curl -X POST 
+-H "Content-Type:application/json" 
+-d '{ "diary": { 
+        "account_id": 4, 
+        "body": "Yeah!!!", 
+        "played_game": "Tetris"
+    }}' 
+http://localhost:3000/diaries

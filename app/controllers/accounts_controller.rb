@@ -20,7 +20,7 @@ class AccountsController < ApplicationController
     if @account.save
       render json: @account, status: :created, location: @account
     else
-      render json: @account.errors, status: :unprocessable_entity
+      render json: @account.errors, status: :@account.erros.full_massage
     end
   end
 
@@ -46,6 +46,10 @@ class AccountsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def account_params
-      params.fetch(:account, {})
+      params.require(:account).permit(
+          :email,
+          :hashed_password,
+          :tmp_authenication_date
+        )
     end
 end

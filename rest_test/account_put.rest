@@ -1,0 +1,8 @@
+curl -X PATCH 
+-H "Content-Type:application/json" 
+-d '{ "account": { 
+        "email": "ddd@vbbb.com", 
+        "hashed_password": "password5", 
+        "tmp_authenication_date": "2020/11/25 22:12:42" 
+    }}' 
+http://localhost:3000/accounts/4

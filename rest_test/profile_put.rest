@@ -1,0 +1,10 @@
+curl -X PATCH 
+-H "Content-Type:application/json" 
+-d '{ "profile": { 
+        "account_id": 4, 
+        "nickname": "akakakakakakakakakakak", 
+        "self_introduction": "Nice to meet you!!", 
+        "gender_id": "2", 
+        "time_period_playing": "Tetris99"
+    }}' 
+http://localhost:3000/profiles/4
