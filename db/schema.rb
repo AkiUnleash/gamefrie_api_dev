@@ -12,20 +12,17 @@
 
 ActiveRecord::Schema.define(version: 2020_11_25_061327) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "accounts", force: :cascade do |t|
+  create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", null: false
     t.string "hashed_password"
     t.datetime "tmp_authenication_date", null: false
     t.datetime "official_authenication_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index "lower((email)::text)", name: "index_accounts_on_LOWER_email", unique: true
+    t.index ["email"], name: "index_accounts_on_email", unique: true
   end
 
-  create_table "diaries", force: :cascade do |t|
+  create_table "diaries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "account_id"
     t.string "body", null: false
     t.string "played_game"
@@ -35,14 +32,14 @@ ActiveRecord::Schema.define(version: 2020_11_25_061327) do
     t.index ["account_id"], name: "index_diaries_on_account_id"
   end
 
-  create_table "genders", force: :cascade do |t|
+  create_table "genders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "gender_name", null: false
     t.string "display_order", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "profiles", force: :cascade do |t|
+  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "account_id"
     t.string "nickname"
     t.string "self_introduction"

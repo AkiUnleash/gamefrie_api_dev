@@ -9,6 +9,6 @@ class CreateAccounts < ActiveRecord::Migration[6.0]
       t.timestamps
     end
 
-    add_index :accounts, "LOWER(email)", unique: true       # メールアドレスにインデックス付与
+    add_index :accounts, "email", unique: true       # メールアドレスにインデックス付与
   end
 end
