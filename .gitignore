@@ -25,3 +25,9 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Docker
+/docker-compose.yml
+/docker-compose.yml.posgre.yml
+/Dockerfile
+/Dockerfile-posgre
