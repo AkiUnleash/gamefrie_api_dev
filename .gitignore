@@ -31,3 +31,4 @@
 /docker-compose.yml.posgre.yml
 /Dockerfile
 /Dockerfile-posgre
+/.gitignore
