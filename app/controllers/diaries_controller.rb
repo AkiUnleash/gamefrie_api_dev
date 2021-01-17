@@ -53,6 +53,7 @@ class DiariesController < ApplicationController
     def diary_params
       params.require(:diary).permit(
           :account_id,
+          :diarytitle,
           :body,
           :played_game,
           :posted_image
