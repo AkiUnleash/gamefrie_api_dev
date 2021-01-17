@@ -38,6 +38,11 @@ class DiariesController < ApplicationController
     @diary.destroy
   end
 
+  def options
+    head :no_content
+    # render nothing: true
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_diary

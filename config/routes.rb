@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :diaries
+
+  resources :diaries do
+    collection do
+      match '', via: :options, action: 'options'
+    end
+  end
+
   resources :profiles
   resources :genders, only: [:index]
   resources :accounts
